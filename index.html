@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Коктейли</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<div class="bg">
+    <div class="blob blob--a"></div>
+    <div class="blob blob--b"></div>
+    <div class="blob blob--c"></div>
+</div>
+
+<header class="top glass">
+    <div class="top__row">
+        <div>
+            <h1 class="title">Мои коктейли</h1>
+        </div>
+
+        <div class="top__actions">
+            <button id="openFilters" class="chip" type="button">Фильтры</button>
+        </div>
+    </div>
+
+    <div class="top__row top__row--2">
+        <label class="search glass" aria-label="Поиск">
+            <span class="search__icon">⌕</span>
+            <input id="search" type="search" placeholder="Поиск: Том Круз, кола, лимон..." autocomplete="off" />
+            <button id="clearSearch" class="search__clear" type="button" aria-label="Очистить">✕</button>
+        </label>
+
+        <div class="meta">
+            <span id="count" class="meta__count">0</span>
+            <span class="meta__text">рецептов</span>
+        </div>
+    </div>
+</header>
+
+<main class="wrap">
+    <section id="list" class="grid" aria-label="Список коктейлей"></section>
+</main>
+
+<!-- Правая панель фильтров -->
+<dialog id="filtersDialog" class="sheet glass" aria-label="Фильтры">
+    <div class="sheet__head">
+        <div class="sheet__title">Фильтры</div>
+        <button id="closeFilters" class="sheet__close" type="button" aria-label="Закрыть">✕</button>
+    </div>
+
+    <div class="sheet__section">
+        <div class="sheet__label">Самогон</div>
+        <div class="chipset" role="group" aria-label="Фильтр по самогону">
+            <button class="chip chip--active" data-filter="all" type="button">Все</button>
+            <button class="chip" data-filter="samogon-b" type="button">самогон Б</button>
+            <button class="chip" data-filter="samogon-ch" type="button">самогон Ч</button>
+        </div>
+    </div>
+
+    <div class="sheet__section">
+        <div class="sheet__label">Крепкость</div>
+        <div class="chipset" role="group" aria-label="Фильтр по крепкости">
+            <button class="chip chip--active" data-strength="all" type="button">Любая</button>
+            <button class="chip" data-strength="1" type="button">🍺</button>
+            <button class="chip" data-strength="2" type="button">🍺🍺</button>
+            <button class="chip" data-strength="3" type="button">🍺🍺🍺</button>
+        </div>
+    </div>
+</dialog>
+
+<template id="cardTpl">
+    <article class="card glass">
+        <button class="card__head" type="button" aria-expanded="false">
+            <div class="card__title"></div>
+            <div class="card__badges"></div>
+        </button>
+
+        <div class="card__body" hidden>
+            <ul class="ing"></ul>
+        </div>
+    </article>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
