@@ -10,7 +10,7 @@ const RECIPES = [
         ],
     },
     {
-        title: "Апероль",
+        title: "Петушара",
         strength: 2,
         tags: ["samogon-ch"],
         ingredients: [
@@ -243,3 +243,4 @@ strengthChips.forEach((btn) => {
 });
 
 render();
+
