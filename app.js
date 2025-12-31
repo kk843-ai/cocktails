@@ -10,7 +10,7 @@ const RECIPES = [
         ],
     },
     {
-        title: "Петушара",
+        title: "Орандж джус",
         strength: 2,
         tags: ["samogon-ch"],
         ingredients: [
@@ -243,4 +243,5 @@ strengthChips.forEach((btn) => {
 });
 
 render();
+
 
